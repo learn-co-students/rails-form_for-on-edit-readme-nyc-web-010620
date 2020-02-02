@@ -761,3 +761,191 @@ Processing by PostsController#edit as HTML
   [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
   Rendered posts/edit.html.erb within layouts/application (16.0ms)
 Completed 200 OK in 347ms (Views: 318.0ms | ActiveRecord: 0.4ms)
+Started GET "/posts" for ::1 at 2020-02-01 18:52:06 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 632ms (Views: 600.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-02-01 18:52:11 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 38ms (Views: 35.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2020-02-01 18:52:16 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rkYiB9dRxzLyp4RLxYkoXN/Mr1fLjstJDO1f0aerMb0AmC0tWyAB7KCN4xMUywj2H4vBEHWD8TOtbIG6q91Lpw==", "post"=>{"title"=>"sddsf", "description"=>"fsf"}, "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.7ms)[0m  [1m[32mINSERT INTO "posts" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-02-01 23:52:16.072578"], ["updated_at", "2020-02-01 23:52:16.072578"]]
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/5
+Completed 302 Found in 17ms (ActiveRecord: 10.9ms)
+
+
+Started GET "/posts/5" for ::1 at 2020-02-01 18:52:16 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 79ms (Views: 55.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/5" for ::1 at 2020-02-01 18:58:59 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 35ms (Views: 25.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/posts" for ::1 at 2020-02-01 18:59:02 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rkYiB9dRxzLyp4RLxYkoXN/Mr1fLjstJDO1f0aerMb0AmC0tWyAB7KCN4xMUywj2H4vBEHWD8TOtbIG6q91Lpw==", "post"=>{"title"=>"sddsf", "description"=>"fsf"}, "commit"=>"Submit Post"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/controllers/posts_controller.rb:31:in `post_params'
+app/controllers/posts_controller.rb:15:in `create'
+  Rendering /Users/miles/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/miles/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/miles/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.7ms)
+  Rendering /Users/miles/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/miles/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendering /Users/miles/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/miles/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.8ms)
+  Rendered /Users/miles/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (81.0ms)
+Started GET "/posts" for ::1 at 2020-02-01 18:59:43 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 32ms (Views: 26.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-02-01 18:59:46 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 36ms (Views: 32.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2020-02-01 18:59:50 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"O8HKlZbIH+kMwJwTnaQic80weK/xd1Qk5xOnzpmoXyeVH8W/GrnZN17q+0tM5gLZDXcW6E96bl5Gknmlld4lPQ==", "post"=>{"title"=>"dcdsf", "description"=>"dfd"}, "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "dcdsf"], ["description", "dfd"], ["created_at", "2020-02-01 23:59:50.608889"], ["updated_at", "2020-02-01 23:59:50.608889"]]
+  [1m[35m (15.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/6
+Completed 302 Found in 24ms (ActiveRecord: 16.7ms)
+
+
+Started GET "/posts/6" for ::1 at 2020-02-01 18:59:50 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 32ms (Views: 24.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/6/edit" for ::1 at 2020-02-01 18:59:54 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/edit.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 66ms (Views: 61.9ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/posts/6" for ::1 at 2020-02-01 18:59:57 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"h+DRs/vCw2NOqBVkhUr8rKZZ546ojFOgKYUC0B//JzYpPt6Zd7MFvRyCcjxUCNwGZh6JyRaBadqIBNy7E4ldLA==", "post"=>{"title"=>"dcdsf", "description"=>"dfsd"}, "commit"=>"Update Post", "id"=>"6"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "posts" SET "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["description", "dfsd"], ["updated_at", "2020-02-01 23:59:57.827962"], ["id", 6]]
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/6
+Completed 302 Found in 9ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/posts/6" for ::1 at 2020-02-01 18:59:57 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 35ms (Views: 32.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-02-01 19:03:30 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (22.5ms)
+Completed 200 OK in 326ms (Views: 312.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/posts" for ::1 at 2020-02-01 19:03:37 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tyjwtR33jqCz2DspudyKEKjRhh0PJXowf+qdLUN0jDMZ9v+fkYZIfuHyXHFonqq6aJboWrEoQErea0NGTwL2KQ==", "post"=>{"title"=>"My title", "description"=>"My Post"}, "commit"=>"Create Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "My title"], ["description", "My Post"], ["created_at", "2020-02-02 00:03:37.623981"], ["updated_at", "2020-02-02 00:03:37.623981"]]
+  [1m[35m (7.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/7
+Completed 302 Found in 13ms (ActiveRecord: 8.6ms)
+
+
+Started GET "/posts/7" for ::1 at 2020-02-01 19:03:37 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 36ms (Views: 23.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-02-01 19:19:25 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 294ms (Views: 267.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/posts" for ::1 at 2020-02-01 19:23:50 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OP8fLSl/hWpuglvX/aMZiQR5XYWfAyHXhzngNwHMZjeWIRAHpQ5DtDyoPI8s4TkjxD4zwiEOG60muD5cDbocLQ==", "post"=>{"title"=>"Yeo", "description"=>"sjfjsd"}, "commit"=>"Submit Post"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Yeo"], ["description", "sjfjsd"], ["created_at", "2020-02-02 00:23:50.572477"], ["updated_at", "2020-02-02 00:23:50.572477"]]
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/8
+Completed 302 Found in 22ms (ActiveRecord: 8.6ms)
+
+
+Started GET "/posts/8" for ::1 at 2020-02-01 19:23:50 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 33ms (Views: 21.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts" for ::1 at 2020-02-01 19:23:55 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 51ms (Views: 44.6ms | ActiveRecord: 0.2ms)
+
+
